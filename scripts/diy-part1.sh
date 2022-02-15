@@ -22,4 +22,4 @@ git clone --depth=1 https://github.com/openwrt/packages -b openwrt-21.02 package
 git clone --depth=1 https://github.com/openwrt/luci -b openwrt-21.02 luci
 
 # helmiwrt packages
-git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
+# git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
