@@ -22,4 +22,4 @@ git clone --depth=1 https://github.com/immortalwrt/packages -b openwrt-18.06 pac
 git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06 luci
 
 # helmiwrt packages
-git clone --depth=1 https://github.com/helmiau/helmiwrt-package
+git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
