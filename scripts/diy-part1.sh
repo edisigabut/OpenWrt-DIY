@@ -18,8 +18,8 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 # sed -i '$a src-git diy https://github.com/CCnut/feed-netkeeper.git;LUCI-LUA-UCITRACK' feeds.conf.default
 
 # Svn checkout packages from immortalwrt's repository
-git clone --depth=1 https://github.com/immortalwrt/packages -b openwrt-18.06 packages
-git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06 luci
+git clone --depth=1 https://github.com/openwrt/packages -b openwrt-21.02 packages
+git clone --depth=1 https://github.com/openwrt/luci -b openwrt-21.02 luci
 
 # helmiwrt packages
 git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
