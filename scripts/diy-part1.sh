@@ -11,7 +11,7 @@
 #
 
 # Uncomment a feed source
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+# sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add feed sources
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
@@ -21,5 +21,3 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 git clone --depth=1 https://github.com/openwrt/packages -b openwrt-21.02 packages
 git clone --depth=1 https://github.com/openwrt/luci -b openwrt-21.02 luci
 
-# helmiwrt packages
-# git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
