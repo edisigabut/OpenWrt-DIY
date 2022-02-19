@@ -18,6 +18,6 @@
 # sed -i '$a src-git diy https://github.com/CCnut/feed-netkeeper.git;LUCI-LUA-UCITRACK' feeds.conf.default
 
 # Svn checkout packages from immortalwrt's repository
-git clone --depth=1 https://github.com/openwrt/packages -b openwrt-21.02 packages
-git clone --depth=1 https://github.com/openwrt/luci -b openwrt-21.02 luci
+# git clone --depth=1 https://github.com/openwrt/packages -b openwrt-21.02 packages
+# git clone --depth=1 https://github.com/openwrt/luci -b openwrt-21.02 luci
 
