@@ -67,5 +67,32 @@ rm -rf ./package/new/luci-theme-argon/htdocs/luci-static/argon/background/README
 #popd
 # git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
 
+# Add luci-theme-neobird theme
+git clone --depth=1 https://github.com/helmiau/luci-theme-neobird
+
+# Add modeminfo
+git clone --depth=1 https://github.com/koshev-msk/luci-app-modeminfo
+
+# Add luci-app-smstools3
+git clone --depth=1 https://github.com/koshev-msk/luci-app-smstools3
+
+# Add luci-app-mmconfig : configure modem cellular bands via mmcli utility
+git clone --depth=1 https://github.com/koshev-msk/luci-app-mmconfig
+
+# Add support for Fibocom L860-GL l850/l860 ncm
+git clone --depth=1 https://github.com/koshev-msk/xmm-modem
+
+# Add 3ginfo, luci-app-3ginfo
+git clone --depth=1 https://github.com/4IceG/luci-app-3ginfo
+
+# Add luci-app-sms-tool
+git clone --depth=1 https://github.com/4IceG/luci-app-sms-tool
+
+# Add luci-app-atinout-mod
+git clone --depth=1 https://github.com/4IceG/luci-app-atinout-mod
+
+# HelmiWrt packages
+git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
+
 # Change default shell to zsh
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
