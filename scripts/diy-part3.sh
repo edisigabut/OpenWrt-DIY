@@ -30,8 +30,25 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # git clone --depth=1 https://github.com/Lienol/openwrt-package
 # rm -rf ../lean/luci-app-kodexplorer
 
-# Add luci-app-passwall
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+# Passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/new/luci-app-passwall
+sed -i 's,default n,default y,g' package/new/luci-app-passwall/Makefile
+sed -i '/Trojan_GO:/d' package/new/luci-app-passwall/Makefile
+sed -i '/V2ray:/d' package/new/luci-app-passwall/Makefile
+sed -i '/Plugin:/d' package/new/luci-app-passwall/Makefile
+wget -P package/new/luci-app-passwall/ https://github.com/QiuSimons/OpenWrt-Add/raw/master/move_2_services.sh
+chmod -R 755 ./package/new/luci-app-passwall/move_2_services.sh
+pushd package/new/luci-app-passwall
+bash move_2_services.sh
+popd
+rm -rf ./feeds/packages/net/https-dns-proxy
+svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/new/tcping
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/new/trojan-go
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/new/brook
+svn co https://github.com/QiuSimons/OpenWrt-Add/trunk/trojan-plus package/new/trojan-plus
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/new/ssocks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/new/hysteria
 
 # Add OpenClash
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash
@@ -41,10 +58,14 @@ git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
 mkdir parted
 cp luci-app-diskman/Parted.Makefile parted/Makefile
 
-# Add luci-theme-argon
-git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
-rm -rf ../lean/luci-theme-argon
+# Argon 主题
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
+wget -P package/new/luci-theme-argon/htdocs/luci-static/argon/background/ https://github.com/QiuSimons/OpenWrt-Add/raw/master/5808303.jpg
+rm -rf ./package/new/luci-theme-argon/htdocs/luci-static/argon/background/README.md
+#pushd package/new/luci-theme-argon
+#git checkout 3b15d06
+#popd
+# git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
 
 # Change default shell to zsh
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
